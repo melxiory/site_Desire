@@ -4,7 +4,7 @@
 @import 'libs';
 @import 'global';
 
-
+// ####### Site header #######
 .header{
   &__inner{
     display: flex;
@@ -39,7 +39,71 @@
     line-height: 22px;
   }
 }
+// ####### END Site header #######
 
+// ####### Rightside menu #######
+.rightside-menu{
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  max-width: 694px;
+  width: 100%;
+  background-color: #fff;
+  padding-top: 40px;
+  box-shadow: -2px 3px 17px 0 #000;
+  transition: all .6s;
+  z-index: 2;
+  &.rightside-menu--close{
+    transform: translateX(500%);
+  }
+  &__close{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-bottom: 60px;
+  }
+  &__content{
+    text-align: center;
+    max-width: 486px;
+    margin: 0 auto;
+  }
+  &__logo{
+    margin-bottom: 40px;
+    display: inline-block;
+  }
+  &__title{
+    color: $title;
+    @extend %title-font;
+    font-size: 36px;
+    line-height: 51px;
+    padding-bottom: 17px;
+    position: relative;
+    margin-bottom: 17px;
+    &::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-width: 252px;
+      margin: 0 auto;
+      height: 1px;
+      background: #6D7278;
+    }
+  }
+  &__text{
+    margin-bottom: 75px;
+  }
+  &__imgaes{
+    max-width: 485px;
+  }
+}
+// ####### END Rightside menu #######
+
+// ####### Site footer #######
 .footer{
   &__content{
     background: #dfdfdf;
@@ -169,43 +233,56 @@
     padding: 42px 0 41px;
   }
 }
+// ####### END Site footer #######
 
-.rightside-menu{
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  max-width: 694px;
-  width: 100%;
-  background-color: #fff;
-  padding-top: 40px;
-  &__close{
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    margin-left: 50px;
-    margin-bottom: 60px;
+
+.top{
+  &__inner{
+    padding-bottom: 70px;
+    position: relative;
+    &::after{
+      content: '';
+      background-image: url(../images/slider-bg.jpg);
+      position: absolute;
+      width: 100%;
+      height: 722px;
+      top: 0;
+      z-index: -1;
+    }
   }
-  &__content{
-    text-align: center;
-    max-width: 486px;
-    margin: 0 auto;
+  &__slider-item{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 815px;
+    object-fit: cover;
   }
-  &__logo{
-    margin-bottom: 40px;
-    display: inline-block;
+  &__slider-img{
+    margin-left: -14%;
+    max-width: 703px;
   }
-  &__title{
+  &__slider-info{
+    max-width: 645px;
+    margin-left: 25px;
+  }
+  &__slider-title{
     color: $title;
-    @extend %title-font;
-    font-size: 36px;
-    line-height: 51px;
+    font-size: 110px;
+    line-height: 135px;
+    padding-bottom: 26px;
+    margin-bottom: 26px;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 185px;
+      background: #6d7278;
+    }
   }
-  &__text{
-    margin-bottom: 75px;
-  }
-  &__imgaes{
-    max-width: 485px;
+  &__slider-text{
+    max-width: 585px;
   }
 }
