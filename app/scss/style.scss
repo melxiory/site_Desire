@@ -18,6 +18,9 @@
     padding: 0;
     cursor: pointer;
   }
+  &__btn-menu{
+    display: none;
+  }
 }
 
 .logo{
@@ -239,11 +242,16 @@
   z-index: 8;
   &__list{
     display: flex;
+    overflow-x: auto;
+  }
+  &__item{
+    position: relative;
+    padding-right: 8px;
   }
   &__item::after{
+    position: absolute;
     content: '/';
-    margin-left: -4px;
-    margin-right: 4px;
+
   }
   &__item:last-child::after{
     display: none;
@@ -274,7 +282,6 @@
     display: flex !important;
     justify-content: center;
     align-items: center;
-    height: 815px;
     object-fit: cover;
   }
   &__slider-img{
@@ -354,7 +361,7 @@
     }
   }
   &__images{
-    min-width: 350px;
+    min-height: 350px;
     object-fit: cover;
   }
   &__info{
@@ -744,6 +751,9 @@
 .map{
   margin-top: -53px;
   margin-bottom: 50px;
+  iframe{
+    height: 578px;
+  }
 }
 // ####### END Site main - map #######
 
@@ -855,20 +865,20 @@
   }
   &__title{
     transition: all .5s;
-    position: absolute;
-    right: 0;
-    left: 0;
+    position: absolute; 
+    right: -5px;
+    left: -25px;
     top: 0;
     bottom: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: rgba(#fff, .6);
     color: $title;
     @extend %title-font;
     line-height: 22px;
     padding: 0 15px;
-    margin-left: -15px;
+    margin-left: 25px;
     text-align: center;
     opacity: 0;
   }
@@ -1270,3 +1280,5 @@
   }
 }
 //####### Site main - blog-one #######
+
+@import 'media';
